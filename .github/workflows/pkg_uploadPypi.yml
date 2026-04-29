@@ -7,7 +7,7 @@ name: upload_wheel_to_PyPI
 on:
   workflow_dispatch:
   push:
-    branches: [main, build_wheel]
+    branches: [main, wheel]
 
 jobs:
   upload_pypi:
