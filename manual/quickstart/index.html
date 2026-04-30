@@ -2882,7 +2882,7 @@ You can follow the instructions on the <a href="https://lammps.sandia.gov/">LAMM
 </ul>
 <div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>lammps_env<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>
 conda<span class="w"> </span>activate<span class="w"> </span>lammps_env
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>lammps
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>lammps<span class="w"> </span>openmpi
 </pre></div>
 </div>
 </div>
@@ -3009,7 +3009,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <span class="w">    </span><span class="nt">envs</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">NP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$SLURM_NTASKS</span>
 
-<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w">   </span><span class="s">"lmp_serial"</span><span class="w">            </span><span class="c1"># or  "mpirun -np $NP lmp_mpi"</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">"mpirun</span><span class="nv"> </span><span class="s">-np</span><span class="nv"> </span><span class="s">$NP</span><span class="nv"> </span><span class="s">lmp_mpi"</span>
 <span class="w">  </span><span class="nt">submit_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w"> </span>
 </pre></div>
 </div>
@@ -3062,7 +3062,7 @@ You can follow the instructions on the <a href="https://wiki.fysik.dtu.dk/gpaw/"
 </ul>
 <div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gpaw_env<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>
 conda<span class="w"> </span>activate<span class="w"> </span>gpaw_env
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gpaw
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gpaw<span class="w"> </span>openmpi
 </pre></div>
 </div>
 </div>
