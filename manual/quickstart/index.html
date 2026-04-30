@@ -2852,7 +2852,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="quickstart">Quickstart<a class="anchor-link" href="#quickstart">¶</a></h1><p>To quickly get the essential workflow of <code>alff</code> package, let start with a simple example. We will use the <code>alff</code> package to calculate the Phonon dispersion of Silicon, using either MD or DFT calculations.</p>
+<h1 id="quickstart">Quickstart<a class="anchor-link" href="#quickstart">¶</a></h1><p>To quickly get the essential workflow of <code>alff</code> package, let start with a simple example. We will use the <code>alff</code> package to calculate the Phonon dispersion of Silicon, using both MD and DFT calculations.</p>
 <p>We will use <code>LAMMPS</code> as the MD engine and <code>GPAW</code> as the DFT engine.</p>
 <p>The following steps will guide you through the installation of <code>alff</code> package, configuration, and running the example.</p>
 <p>First, we need to prepare the computing environment. In this example, we assume you are on Linux system, and use <code>conda</code> to manage the Python environment.</p>
@@ -3130,6 +3130,52 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <span class="w">      </span><span class="nt">npoints</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">              </span><span class="c1"># number of k-points</span>
 <span class="w">    </span><span class="nt">dos</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                   </span><span class="c1"># phonon density of states</span>
 <span class="w">    </span><span class="nt">pdos</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                  </span><span class="c1"># phonon projected density of states</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=550d8cb4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li><code>MACHINE.yml</code> file as shown below</li>
+</ol>
+<ul>
+<li>For more details of the parameters, please refer to the <a href="https://thangckt.github.io/alff/schema/manual_schema_machine/">Schema for configuring the remote machines</a>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># Example MACHINE.yml file</span>
+<span class="nt">gpaw_1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">machine</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">batch_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Slurm</span><span class="w">                </span><span class="c1"># Assume you are using a cluster with Slurm as the job scheduler</span>
+<span class="w">    </span><span class="nt">context_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SSH</span>
+<span class="w">    </span><span class="nt">remote_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/remote/workdir</span>
+<span class="w">    </span><span class="nt">retry_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">remote_profile</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your_cluster_IP_or_domain</span>
+<span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username_on_cluster</span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">number_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">cpu_per_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">custom_flags</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"#SBATCH</span><span class="nv"> </span><span class="s">--job-name=phonon"</span><span class="w">  </span><span class="c1"># job name</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"#SBATCH</span><span class="nv"> </span><span class="s">--partition=normal"</span><span class="w"> </span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"can</span><span class="nv"> </span><span class="s">load</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">environment</span><span class="nv"> </span><span class="s">here,</span><span class="nv"> </span><span class="s">e.g.,</span><span class="nv"> </span><span class="s">module</span><span class="nv"> </span><span class="s">load</span><span class="nv"> </span><span class="s">conda"</span>
+<span class="w">    </span><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda/gpaw_env</span>
+<span class="w">    </span><span class="nt">envs</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">NP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$SLURM_NTASKS</span>
+
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">"mpirun</span><span class="nv"> </span><span class="s">-np</span><span class="nv"> </span><span class="s">$NP</span><span class="nv"> </span><span class="s">gpaw</span><span class="nv"> </span><span class="s">python"</span>
+<span class="w">  </span><span class="nt">submit_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
