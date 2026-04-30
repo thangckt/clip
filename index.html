@@ -1938,7 +1938,7 @@
 
     </div>
 
-</div><p><code>ALFF</code> is end-to-end workflow for generating graphNN-based force fields through iterative active learning cycles (ML training → MD exploration → DFT labeling). The workflow is fully modular and highly customizable, enabling the entire process to run end-to-end without any user intervention. Key features of <code>ALFF</code> include:</p>
+</div><p><code>ALFF</code> is an end-to-end workflow for generating graphNN-based force fields through iterative active learning cycles (ML training → MD exploration → DFT labeling). The workflow is fully modular and highly customizable, enabling the entire process to run end-to-end without any user intervention. Key features of <code>ALFF</code> include:</p>
 <ul>
 <li>Automatic generation of necessary scripts for ML training, MD simulations, and DFT calculations.</li>
 <li>Submission of jobs to remote clusters, support almost connection protocols (e.g., Local, SSH, Cloud APIs,...), job schedulers (e.g., SLURM, SGE, PBS, TORQUE, etc.), and heterogeneous computing resources.</li>
@@ -1947,7 +1947,7 @@
 <li>Candidate-selection criteria based on energy, forces, (and/or) stresses.</li>
 <li>Easily configure sampling spaces, including (and/or) temperatures, stresses, enhanced samplings, van der Waals correction.</li>
 <li>Support multiple MD/DFT calculators.</li>
-<li>Support several leading graph-based MLIP models, and multi-fidelity architectures.</li>
+<li>Support several leading graph-based MLIP architectures.</li>
 </ul>
 <p>A distinctive capability of <code>ALFF</code> is its support for distributing workloads across multiple remote clusters. Rather than relying on a single cluster with long queue times, <code>ALFF</code> can asynchronously submit, monitor, and collect results from several heterogeneous computing infrastructures, dramatically accelerating the active learning workflow. Imagine combining computing resources from entirely different sources - such as Google Cloud, Amazon Web Services, national super-computing centers, local campus clusters - and having them collaborate seamlessly within a central workflow? This is exactly what <code>ALFF</code> is designed for.</p>
 <p>Or consider a practical scenario in which thousands of atomic structures must be labeled using DFT calculations on two heterogeneous clusters, one equipped with GPUs nodes + CPUs nodes + SLURM scheduler, and the other with only CPU nodes + SGE scheduler. You may want to run half of the DFT jobs on the first cluster's GPUs nodes, a quarter on its CPUs nodes, and the remaining quarter on the second cluster's CPU nodes, simultaneously. <code>ALFF</code> easily handles this complex job distribution. With simple configurations, <code>ALFF</code> automatically distributes, schedules, and manages all jobs across the available resources without any manual intervention.</p>
