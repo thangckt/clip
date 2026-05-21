@@ -2847,51 +2847,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="false" data-jp-theme-name="JupyterLab Dark">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9b20a767">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Table of contents</strong><a id="toc0_"></a></p>
-<ul>
-<li><a href="#toc1_">Quickstart</a><ul>
-<li><a href="#toc1_1_">Example 1: Computing phonon dispersion with MD simulations</a><ul>
-<li><a href="#toc1_1_1_">Prepare computing environment</a></li>
-<li><a href="#toc1_1_2_">Prepare configuration files</a></li>
-<li><a href="#toc1_1_3_">Run the calculation</a></li>
-</ul>
-</li>
-<li><a href="#toc1_2_">Example 2: Computing phonon dispersion with DFT calculations</a><ul>
-<li><a href="#toc1_2_1_">Prepare computing environment</a></li>
-<li><a href="#toc1_2_2_">Prepare configuration files</a></li>
-<li><a href="#toc1_2_3_">Run the calculation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- vscode-jupyter-toc-config
-	numbering=false
-	anchor=true
-	flat=false
-	minLevel=1
-	maxLevel=6
-	/vscode-jupyter-toc-config -->
-<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c5e2213">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="quickstart"><a id="toc1_"></a><a href="#toc0_">Quickstart</a><a class="anchor-link" href="#quickstart">¶</a></h1><p>To quickly get the essential workflow of <code>alff</code> package, let start with a simple example. We will use the <code>alff</code> package to calculate the Phonon dispersion of Silicon, using both MD and DFT calculations.</p>
+<h1 id="quickstart">Quickstart<a class="anchor-link" href="#quickstart">¶</a></h1><p>To quickly understand the workflow of <code>alff</code> package, let first start with a simple example. We will use the <code>alff</code> package to calculate the Phonon dispersion of Silicon, using either MD or DFT calculations. This example will help show you how to make 'alff" work: set up the configuration file, launch the automated workflow, and GET the results. Other more sophisticated workflows, such as Active Learning Interatomic Potential have the similar setup and launch procedures, then you can easily adapt without steep learning curve.</p>
 <p>We will use <code>LAMMPS</code> as the MD engine and <code>GPAW</code> as the DFT engine.</p>
-<p>The following steps will guide you through the installation of <code>alff</code> package, configuration, and running the example.</p>
 <p>First, we need to prepare the computing environment. In this example, we assume you are on Linux system, and use <code>conda</code> to manage the Python environment.</p>
 </div>
 </div>
@@ -2903,7 +2866,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="example-1-computing-phonon-dispersion-with-md-simulations"><a id="toc1_1_"></a><a href="#toc0_">Example 1: Computing phonon dispersion with MD simulations</a><a class="anchor-link" href="#example-1-computing-phonon-dispersion-with-md-simulations">¶</a></h2><h3 id="prepare-computing-environment"><a id="toc1_1_1_"></a><a href="#toc0_">Prepare computing environment</a><a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><ol>
+<h2 id="example-1-computing-phonon-dispersion-with-md-simulations">Example 1: Computing phonon dispersion with MD simulations<a class="anchor-link" href="#example-1-computing-phonon-dispersion-with-md-simulations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><ol>
 <li>Install <code>alff</code> package in your local laptop or desktop computer.</li>
 </ol>
 <div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>alff_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
@@ -2931,7 +2894,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="prepare-configuration-files"><a id="toc1_1_2_"></a><a href="#toc0_">Prepare configuration files</a><a class="anchor-link" href="#prepare-configuration-files">¶</a></h3><p>You will need 2 configuration files to run the <code>alff</code> workflow:</p>
+<h3 id="prepare-configuration-files">Prepare configuration files<a class="anchor-link" href="#prepare-configuration-files">¶</a></h3><p>You will need 2 configuration files to run the <code>alff</code> workflow:</p>
 <ul>
 <li><code>PARAM.yml</code>: Define parameters of phonon calculation</li>
 <li><code>MACHINE.yml</code>: The settings of the remote computing cluster.</li>
@@ -3059,7 +3022,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="run-the-calculation"><a id="toc1_1_3_"></a><a href="#toc0_">Run the calculation</a><a class="anchor-link" href="#run-the-calculation">¶</a></h3><p>After finishing the above steps, you can run the <code>alff</code> workflow to calculate the phonon dispersion in your local computer.</p>
+<h3 id="run-the-calculation">Run the calculation<a class="anchor-link" href="#run-the-calculation">¶</a></h3><p>After finishing the above steps, you can run the <code>alff</code> workflow to calculate the phonon dispersion in your local computer.</p>
 <div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>alff_env
 alff_phonon<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </pre></div>
@@ -3089,7 +3052,7 @@ alff_phonon<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="example-2-computing-phonon-dispersion-with-dft-calculations"><a id="toc1_2_"></a><a href="#toc0_">Example 2: Computing phonon dispersion with DFT calculations</a><a class="anchor-link" href="#example-2-computing-phonon-dispersion-with-dft-calculations">¶</a></h2><h3 id="prepare-computing-environment"><a id="toc1_2_1_"></a><a href="#toc0_">Prepare computing environment</a><a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><p>Similar to the MD example, you need to prepare the computing environment for DFT calculations.</p>
+<h2 id="example-2-computing-phonon-dispersion-with-dft-calculations">Example 2: Computing phonon dispersion with DFT calculations<a class="anchor-link" href="#example-2-computing-phonon-dispersion-with-dft-calculations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><p>Similar to the MD example, you need to prepare the computing environment for DFT calculations.</p>
 <ol start="2">
 <li>Install <code>GPAW</code> in your remote computing cluster.
 You can follow the instructions on the <a href="https://wiki.fysik.dtu.dk/gpaw/">GPAW website</a> to install it on your system.</li>
@@ -3111,7 +3074,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="prepare-configuration-files"><a id="toc1_2_2_"></a><a href="#toc0_">Prepare configuration files</a><a class="anchor-link" href="#prepare-configuration-files">¶</a></h3><p>Similar to the MD example, now you just need to modify the <code>PARAM.yml</code> file to use <code>gpaw</code> as the calculator</p>
+<h3 id="prepare-configuration-files">Prepare configuration files<a class="anchor-link" href="#prepare-configuration-files">¶</a></h3><p>Similar to the MD example, now you just need to modify the <code>PARAM.yml</code> file to use <code>gpaw</code> as the calculator</p>
 <ol>
 <li><code>PARAM.yml</code> file as shown below</li>
 </ol>
@@ -3224,7 +3187,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="run-the-calculation"><a id="toc1_2_3_"></a><a href="#toc0_">Run the calculation</a><a class="anchor-link" href="#run-the-calculation">¶</a></h3><p>Run the <code>alff</code> workflow to calculate the phonon dispersion in your local computer.</p>
+<h3 id="run-the-calculation">Run the calculation<a class="anchor-link" href="#run-the-calculation">¶</a></h3><p>Run the <code>alff</code> workflow to calculate the phonon dispersion in your local computer.</p>
 <div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>alff_env
 alff_phonon<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </pre></div>
