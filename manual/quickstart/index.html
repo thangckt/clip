@@ -555,6 +555,17 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#install-the-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install the package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-1-computing-phonon-dispersion-with-md-simulations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2012,6 +2023,17 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#install-the-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install the package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-1-computing-phonon-dispersion-with-md-simulations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2860,23 +2882,28 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c3c22eec">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="install-the-alff-package">Install the <code>alff</code> package<a class="anchor-link" href="#install-the-alff-package">¶</a></h2><p>Install <code>alff</code> package in your local laptop or desktop computer.</p>
+<div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>alff_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
+conda<span class="w"> </span>activate<span class="w"> </span>alff_env
+pip<span class="w"> </span>install<span class="w"> </span>alff<span class="w"> </span>alff<span class="o">[</span>phonon<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c839c8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="example-1-computing-phonon-dispersion-with-md-simulations">Example 1: Computing phonon dispersion with MD simulations<a class="anchor-link" href="#example-1-computing-phonon-dispersion-with-md-simulations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><ol>
-<li>Install <code>alff</code> package in your local laptop or desktop computer.</li>
-</ol>
-<div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>alff_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
-conda<span class="w"> </span>activate<span class="w"> </span>alff_env
-pip<span class="w"> </span>install<span class="w"> </span>alff<span class="w"> </span>alff<span class="o">[</span>phonon<span class="o">]</span>
-</pre></div>
-<ol start="2">
-<li>Install <code>LAMMPS</code> in your remote computing cluster.
-You can follow the instructions on the <a href="https://lammps.sandia.gov/">LAMMPS website</a> to install it on your system.</li>
-</ol>
+<h2 id="example-1-computing-phonon-dispersion-with-md-simulations">Example 1: Computing phonon dispersion with MD simulations<a class="anchor-link" href="#example-1-computing-phonon-dispersion-with-md-simulations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><p>Install <code>LAMMPS</code> in your remote computing cluster. You can follow the instructions on the <a href="https://lammps.sandia.gov/">LAMMPS website</a> to install it on your system.</p>
 <ul>
 <li>For simplicity, you can install the pre-compiled version of LAMMPS in <code>conda</code> environment:</li>
 </ul>
@@ -3052,11 +3079,7 @@ alff_phonon<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="example-2-computing-phonon-dispersion-with-dft-calculations">Example 2: Computing phonon dispersion with DFT calculations<a class="anchor-link" href="#example-2-computing-phonon-dispersion-with-dft-calculations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><p>Similar to the MD example, you need to prepare the computing environment for DFT calculations.</p>
-<ol start="2">
-<li>Install <code>GPAW</code> in your remote computing cluster.
-You can follow the instructions on the <a href="https://wiki.fysik.dtu.dk/gpaw/">GPAW website</a> to install it on your system.</li>
-</ol>
+<h2 id="example-2-computing-phonon-dispersion-with-dft-calculations">Example 2: Computing phonon dispersion with DFT calculations<a class="anchor-link" href="#example-2-computing-phonon-dispersion-with-dft-calculations">¶</a></h2><h3 id="prepare-computing-environment">Prepare computing environment<a class="anchor-link" href="#prepare-computing-environment">¶</a></h3><p>Install <code>GPAW</code> in your remote computing cluster. You can follow the instructions on the <a href="https://wiki.fysik.dtu.dk/gpaw/">GPAW website</a> to install it on your system.</p>
 <ul>
 <li>For simplicity, you can install the pre-compiled version of GPAW in <code>conda</code> environment:</li>
 </ul>
