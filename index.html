@@ -1939,19 +1939,19 @@
 
     </div>
 
-</div><p><code>CLIP</code> is an end-to-end workflow for generating graphNN-based force fields through iterative active learning cycles (ML training → MD exploration → DFT labeling). The workflow is fully modular and highly customizable, enabling the entire process to run end-to-end without any user intervention. Key features of <code>CLIP</code> include:</p>
+</div><p><code>CLIP</code> is an end-to-end workflow for generating graphNN-based force fields through iterative concurrent learning cycles (ML training → MD exploration → DFT labeling). The workflow is fully modular and highly customizable, enabling the entire process to run end-to-end without any user intervention. Key features of <code>CLIP</code> include:</p>
 <ul>
 <li>Automatic generation of necessary scripts for ML training, MD simulations, and DFT calculations.</li>
 <li>Submission of jobs to remote clusters, supporting multiple connection protocols (e.g., Local, SSH, Cloud APIs, etc.), job schedulers (e.g., SLURM, SGE, PBS, TORQUE, etc.), and heterogeneous computing resources.</li>
 <li>Automated monitoring of job status and retrieval of results upon completion.</li>
-<li>Parsing of results and execution of active learning iterations automatically.</li>
+<li>Parsing of results and execution of concurrent learning iterations automatically.</li>
 <li>Candidate-selection criteria based on energy, forces, (and/or) stresses.</li>
 <li>Easily configure sampling spaces, including (and/or) temperatures, stresses, enhanced samplings, van der Waals correction.</li>
 <li>Support multiple MD/DFT calculators.</li>
 <li>Support any Enhanced Sampling methods (e.g., Metadynamics, Umbrella sampling, etc.) that interface with PLUMED.</li>
 <li>Support several leading graph-based MLIP architectures.</li>
 </ul>
-<p>A unique capability of <code>CLIP</code> is its support for distributing workloads across multiple remote clusters. Rather than relying on a single cluster with long queue times, <code>CLIP</code> can asynchronously submit, monitor, and collect results from several heterogeneous computing infrastructures, dramatically accelerating the active learning workflow. Imagine combining computing resources from entirely different sources - such as Google Cloud, Amazon Web Services, national super-computing centers, local campus clusters - and having them collaborate seamlessly within a central workflow? This is exactly what <code>CLIP</code> is designed for.</p>
+<p>A unique capability of <code>CLIP</code> is its support for distributing workloads across multiple remote clusters. Rather than relying on a single cluster with long queue times, <code>CLIP</code> can asynchronously submit, monitor, and collect results from several heterogeneous computing infrastructures, dramatically accelerating the concurrent learning workflow. Imagine combining computing resources from entirely different sources - such as Google Cloud, Amazon Web Services, national super-computing centers, local campus clusters - and having them collaborate seamlessly within a central workflow? This is exactly what <code>CLIP</code> is designed for.</p>
 <p>Or consider a practical scenario in which thousands of atomic structures must be labeled using DFT calculations on two heterogeneous clusters, one equipped with GPUs nodes + CPUs nodes + SLURM scheduler, and the other with only CPU nodes + SGE scheduler. You may want to run half of the DFT jobs on the first cluster's GPUs nodes, a quarter on its CPUs nodes, and the remaining quarter on the second cluster's CPU nodes, simultaneously. <code>CLIP</code> easily handles this complex job distribution. With simple configurations, <code>CLIP</code> automatically distributes, schedules, and manages all jobs across the available resources without any manual intervention.</p>
 <p>The modular design allows <code>CLIP</code> to easily extend/implement new functionalities/workflows. It already includes many built-in workflows to automatically compute Phonon dispersion, Potential energy surface (PES), elastic constants tensor, and more will be added.</p>
 <p>The only task required from users is to provide a configuration file - then fasten the seatbelt and enjoy the ride.</p>
