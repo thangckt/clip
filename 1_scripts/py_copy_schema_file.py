@@ -1,5 +1,4 @@
-from clip.base import KEY as K
-
+from clff.base import KEY as K
 from thkit import THKIT_ROOT
 
 EXAMPLE_PATH = "example"  # relative path to project_dir
