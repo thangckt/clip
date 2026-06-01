@@ -28,7 +28,7 @@
     
     
       
-        <title>CLFF: Data generator - clff</title>
+        <title>Command-line Interface (CLI) - clff</title>
       
     
     
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clff-data-generator" class="md-skip">
+        <a href="#command-line-interface-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CLFF: Data generator
+              Command-line Interface (CLI)
             
           </span>
         </div>
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_active_learning.md" class="md-nav__link">
+      <a href="../clff_active_learning/" class="md-nav__link">
         
   
   
@@ -606,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_gendata.md" class="md-nav__link">
+      <a href="../clff_gendata/" class="md-nav__link">
         
   
   
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_phonon_calc.md" class="md-nav__link">
+      <a href="../clff_phonon_calc/" class="md-nav__link">
         
   
   
@@ -662,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_elastic_calc.md" class="md-nav__link">
+      <a href="../clff_elastic_calc/" class="md-nav__link">
         
   
   
@@ -690,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_pes.md" class="md-nav__link">
+      <a href="../clff_pes/" class="md-nav__link">
         
   
   
@@ -1856,38 +1856,43 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
+  <a href="#clff-concurrent-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parameters
+        CLFF concurrent learning
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context options
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
+  <a href="#data-generator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machines
+        Data generator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phonon-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phonon calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset tools
       
     </span>
   </a>
@@ -1909,127 +1914,47 @@
                 
                   
 
-<h1 id="clff-data-generator">CLFF: Data generator<a class="headerlink" href="#clff-data-generator" title="Permanent link">¤</a></h1>
-<!-- ::: clff
-    options:
-        members: false -->
-
-<p>To generate labeled data for training ML forcefields, <code>clff_gendata</code> is a command-line tool designed to perform the following tasks automatically without needs any user intervention:</p>
+<h1 id="command-line-interface-cli">Command-line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permanent link">¤</a></h1>
+<p>CLFF provides command-line interface (CLI) to run the CLFF processes:</p>
 <ul>
-<li>Build atomic structures</li>
-<li>Generate DFT codes to optimize atomic structures</li>
-<li>Submit DFT optimization jobs to the clusters, monitor the job status, and get back the DFT calcualation results</li>
-<li>Generate atomic structures by scaling and perturbing the optimized structures</li>
-<li>Generate DFT codes to run AIMD simulations</li>
-<li>Submit AIMD jobs to the clusters, monitor the job status, and get back the DFT calculation results</li>
-<li>Collect the data from the DFT calculations</li>
-<li>Convert the data to the format that can ready to used for training ML forcefields.</li>
+<li>Active learning process</li>
+<li>generate data for training ML forcefields</li>
+<li>convert MPtrj files to XYZ datasets.</li>
+<li>etc.</li>
 </ul>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clff_gendata<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
+<!-- ::: clff -->
+
+<h2 id="clff-concurrent-learning">CLFF concurrent learning<a class="headerlink" href="#clff-concurrent-learning" title="Permanent link">¤</a></h2>
+<p>Run the main CLFF concurrent learning process.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clff_al<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </span></code></pre></div>
 <ul>
 <li><code>PARAM.yml</code>: The parameters of the generator.</li>
-<li><code>MACHINE.yml</code>: The settings of the machines running the generator's subprocesses.</li>
+<li><code>MACHINE.yml</code>: The settings of the machines running the generator.</li>
 </ul>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">¤</a></h2>
-<p>The parameters of the generator are stored in a YAML/JSON/JSONC file. Here is an example of the parameters:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">stages</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make_structure</span><span class="w">         </span><span class="c1"># build the atomic structures</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optimize</span><span class="w">                </span><span class="c1"># optimize the structure</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">strain_perturb</span><span class="w">           </span><span class="c1"># scale and perturb the structure</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run_dft</span><span class="w">                 </span><span class="c1"># run the DFTsinglepoint/AIMD simulation</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collect_data</span><span class="w">            </span><span class="c1"># collect the data</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">structure</span><span class="p">:</span><span class="w">  </span><span class="c1"># atomic structure information</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="c1"># from_extxyz: [&quot;path/to/extxyz_file&quot;]  # list-of-paths to the EXTXYZ files to be used as the initial structure. If provided, the structure will be read from the file, and the other structure parameters will be ignored.</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">from_scratch</span><span class="p">:</span><span class="w">               </span><span class="c1"># build the structure from scratch</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">structure_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bulk&quot;</span><span class="w">    </span><span class="c1"># bulk, molecule, surface,</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">chem_formula</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;W&quot;</span><span class="w">         </span><span class="c1"># chemical formula/element. e.g., &quot;H2O&quot;, &quot;Mg2O2&quot;, &quot;Mg&quot;,</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">supercell</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w">    </span><span class="c1"># size of the supercell</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">pbc</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">ase_arg</span><span class="p">:</span><span class="w">                 </span><span class="c1"># ASE kwargs for building the structure. Accept all ASE arguments.</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="nt">crystalstructure</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;fcc&quot;</span><span class="w"> </span><span class="c1"># choices: sc,fcc,bcc,tetragonal,bct,hcp,rhombohedral,orthorhombic,mcl,diamond,zincblende,rocksalt,cesiumchloride,fluorite,wurtzite.</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.15</span><span class="w">  </span><span class="c1"># lattice constant</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="c1"># cubic: True</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nt">strain_perturb</span><span class="p">:</span><span class="w">                          </span><span class="c1"># scale and perturb the structure</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="nt">strain_x</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.95</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.05</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.1</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># scale the structure in x-direction</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="nt">strain_y</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.95</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.05</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.1</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># scale the structure in y-direction</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="nt">strain_z</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.95</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.05</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.1</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># scale the structure in z-direction</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="nt">perturb_num</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">                        </span><span class="c1"># number of perturbations on each structure</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="nt">perturb_disp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w">                    </span><span class="c1"># stadard deviation of the perturb displacement</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="nt">dft</span><span class="p">:</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">  </span><span class="nt">calc_type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;aimd&#39;</span><span class="w">              </span><span class="c1"># choices: &#39;singlepoint&#39;, &#39;aimd&#39;</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="nt">submit_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span><span class="w">         </span><span class="c1"># maximum number of jobs per submission to the cluster</span>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">  </span><span class="nt">gpaw_calc</span><span class="p">:</span><span class="w">                    </span><span class="c1"># accept GPAW parameters</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pw&#39;</span><span class="w">                </span><span class="c1"># use PlaneWave method energy cutoff in eV</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">      </span><span class="nt">ecut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="nt">xc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PBE&quot;</span><span class="w">                   </span><span class="c1"># exchange-correlation functional</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">    </span><span class="nt">kpts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&quot;density&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;gamma&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">False</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># if not set `kpts`, then only Gamma-point is used</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">    </span><span class="nt">parallel</span><span class="p">:</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">      </span><span class="nt">sl_auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">             </span><span class="c1"># enable ScaLAPACK parallelization</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">      </span><span class="c1"># use_elpa: True          # enable Elpa eigensolver</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">      </span><span class="nt">augment_grids</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">       </span><span class="c1"># use all cores for XC/Poisson solver</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
-</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">  </span><span class="nt">optimize</span><span class="p">:</span><span class="w">                     </span><span class="c1"># run DFT to optimize the structure</span>
-</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="nt">fmax</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span><span class="w">                  </span><span class="c1"># force convergence criteria</span>
-</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">  </span><span class="nt">aimd</span><span class="p">:</span><span class="w">                         </span><span class="c1"># run AIMD simulation</span>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">    </span><span class="nt">dt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">                     </span><span class="c1"># time step in fs</span>
-</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">    </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class="w">            </span><span class="c1"># temperature in K</span>
-</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">    </span><span class="nt">ensemble</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVE&quot;</span><span class="w">             </span><span class="c1"># ensemble type. choices: &quot;NVE&quot;, &quot;NVT&quot;</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">    </span><span class="nt">collect_frames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">           </span><span class="c1"># number of frames to be collected. Then nsteps = collect_frames * traj_freq</span>
-</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">    </span><span class="nt">traj_freq</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">                </span><span class="c1"># dump the frames every `traj_freq` steps</span>
+<h2 id="data-generator">Data generator<a class="headerlink" href="#data-generator" title="Permanent link">¤</a></h2>
+<p>Generate data for training ML forcefields.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clff_gendata<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </span></code></pre></div>
-<h3 id="context-options">Context options<a class="headerlink" href="#context-options" title="Permanent link">¤</a></h3>
-<p>When the output directory already exists, the generator will ask for the user's choice to proceed. The options are:
-- <code>Yes</code>: overwrite the existing directory and continue.
-- <code>Backup</code>: backup the existing directory and continue.
-- <code>No</code>: skip the building process and exit.</p>
-<p><code>Yes</code>: is recommended. With this option, the generator will
-- Overwrite and continue in the existing directory
-- Automatically select the unLABELED configurations to run DFT calculations, avoi running DFT for LABELED configurations.
-- This is the best way to continue the previous uncomplishness or update some more sampling options.</p>
-<h2 id="machines">Machines<a class="headerlink" href="#machines" title="Permanent link">¤</a></h2>
-<p>The settings of the machines running the generator's subprocesses are stored in a YAML/JSON/JSONC file. Here is an example of the machine settings:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">dft</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mpirun</span><span class="nv"> </span><span class="s">-np</span><span class="nv"> </span><span class="s">$NSLOTS</span><span class="nv"> </span><span class="s">gpaw&quot;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">machine</span><span class="p">:</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">batch_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SGE</span><span class="w">            </span><span class="c1"># Supported systems: SGE, SLURM, PBS, TORQUE, BASH</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">context_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SSH</span><span class="w">   </span><span class="c1"># Supported contexts: SSH, Local</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">remote_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/of/project/in/remote/machine</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">remote_profile</span><span class="p">:</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_IP_address</span><span class="w">         </span><span class="c1"># address of the remote machine</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">little_bird</span><span class="w">             </span><span class="c1"># username to login the remote machine</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123456&quot;</span><span class="w">                </span><span class="c1"># password to login the remote machine</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022</span><span class="w">                        </span><span class="c1"># port to connect the remote machine</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w">                       </span><span class="c1"># timeout for the SSH connection</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nt">execute_command</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ssh</span><span class="nv"> </span><span class="s">cluster&quot;</span><span class="w">    </span><span class="c1"># command to execute the SSH connection</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nt">queue_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;lion-normal.q&quot;</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nt">cpu_per_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nt">kwargs</span><span class="p">:</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">      </span><span class="nt">pe_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lion-normal</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">      </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zfp</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nt">custom_flags</span><span class="p">:</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;#$</span><span class="nv"> </span><span class="s">-l</span><span class="nv"> </span><span class="s">h_rt=168:00:00&quot;</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nt">module_list</span><span class="p">:</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda/py11gpaw</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nt">source_list</span><span class="p">:</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/profile.d/modules.sh</span>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="nt">envs</span><span class="p">:</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">      </span><span class="nt">OMP_NUM_THREADS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="nt">OMPI_MCA_btl_openib_allow_ib</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="c1"># OMPI_MCA_btl: ^tcp</span>
+<ul>
+<li><code>PARAM.yml</code>: The parameters of the generator.</li>
+<li><code>MACHINE.yml</code>: The settings of the machines running the generator.</li>
+</ul>
+<h2 id="phonon-calculation">Phonon calculation<a class="headerlink" href="#phonon-calculation" title="Permanent link">¤</a></h2>
+<p>Perform the phonon calculation.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clff_phonon<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
 </span></code></pre></div>
+<ul>
+<li><code>PARAM.yml</code>: The parameters of the generator.</li>
+<li><code>MACHINE.yml</code>: The settings of the machines running the generator.</li>
+</ul>
+<h2 id="dataset-tools">Dataset tools<a class="headerlink" href="#dataset-tools" title="Permanent link">¤</a></h2>
+<p>Convert MPtrj to XYZ</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chgnet_to_xyz<span class="w"> </span>MPtrj.json
+</span></code></pre></div>
+<ul>
+<li><code>MPtrj.json</code>: The <a href="https://figshare.com/articles/dataset/Materials_Project_Trjectory_MPtrj_Dataset/23713842?file=41619375">MPtrj file</a> to be converted to XYZ dataset.</li>
+</ul>
 
 
 
