@@ -23,6 +23,6 @@ The modular design allows clff to easily extend/implement new functionalities/wo
 
 The only task required from users is to provide a configuration file - then fasten the seatbelt and enjoy the ride.
 
-<img src="https://thangckt.github.io/clff/manual/_image/intro_clff_1.png" style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;">
+<img src="https://thangckt.github.io/clff/manual/_image/intro_clff.png" style="display: block; margin-left: auto; margin-right: auto;">
 
-<img src="https://thangckt.github.io/clff/manual/_image/intro_clff_2.png" style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;">
+
