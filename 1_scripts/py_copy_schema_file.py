@@ -1,3 +1,4 @@
+from clff import CLFF_ROOT
 from clff.base import KEY as K
 from thkit import THKIT_ROOT
 
@@ -36,8 +37,8 @@ def main():
         yaml_schema_file=K.SCHEMA_GENDATA,
     )
     append_schema_text(
-        md_file="./_docs/schema/manual_schema_active_learning.md",
-        yaml_schema_file=K.SCHEMA_ACTIVE_LEARN,
+        md_file="./_docs/schema/manual_SCHEMA_CONCURRENTing.md",
+        yaml_schema_file=K.SCHEMA_CONCURRENT,
     )
     append_schema_text(
         md_file="./_docs/schema/manual_schema_finetune.md",
@@ -68,13 +69,19 @@ def main():
         yaml_schema_file=K.SCHEMA_LAMMPS,
     )
 
+    ### MLP schema
+    append_schema_text(
+        md_file="./_docs/schema/mlp_schema/mlp_schema_sevenn.md",
+        yaml_schema_file=f"{CLFF_ROOT}/cl/mlp/schema_sevenn.yml",
+    )
+
     ###ANCHOR Append example configuration to the .md files
     append_example_config(
         md_file="./_docs/schema/manual_schema_gendata.md",
         config_files=[f"{EXAMPLE_PATH}/gdata/sampleConfig_gendata.yml"],
     )
     append_example_config(
-        md_file="./_docs/schema/manual_schema_active_learning.md",
+        md_file="./_docs/schema/manual_SCHEMA_CONCURRENTing.md",
         config_files=[f"{EXAMPLE_PATH}/al/sampleConfig_active_learn.yml"],
     )
     append_example_config(
