@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../clff_elastic_calc/">
+        <link rel="prev" href="../quickstart/">
       
       
-        <link rel="next" href="../../schema/index_manual_schema/">
+        <link rel="next" href="../wl_concurrent_learning/">
       
       
         
@@ -32,7 +32,7 @@
     
     
       
-        <title>PES scanning - clff</title>
+        <title>Installation - clff</title>
       
     
     
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clff-pes-calculation" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PES scanning
+              Installation
             
           </span>
         </div>
@@ -537,6 +537,8 @@
       
         
       
+        
+      
     
     
     
@@ -558,7 +560,7 @@
   <span class="md-ellipsis">
     
   
-    CLFF workflows
+    Tutorials
   
 
     
@@ -574,7 +576,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    CLFF workflows
+    Tutorials
   
 
           </label>
@@ -584,10 +586,48 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../clff_active_learning/" class="md-nav__link">
+      <a href="../wl_concurrent_learning/" class="md-nav__link">
         
   
   
@@ -615,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_gendata/" class="md-nav__link">
+      <a href="../wl_gendata/" class="md-nav__link">
         
   
   
@@ -643,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_phonon_calc/" class="md-nav__link">
+      <a href="../wl_phonon_calc/" class="md-nav__link">
         
   
   
@@ -671,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clff_elastic_calc/" class="md-nav__link">
+      <a href="../wl_elastic_calc/" class="md-nav__link">
         
   
   
@@ -696,19 +736,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../wl_pes/" class="md-nav__link">
         
   
   
@@ -724,7 +755,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -792,7 +822,7 @@
   <span class="md-ellipsis">
     
   
-    Schema for workflow configuration
+    Schema for workflows settings
   
 
     
@@ -808,7 +838,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Schema for workflow configuration
+    Schema for workflows settings
   
 
           </label>
@@ -1168,7 +1198,7 @@
   <span class="md-ellipsis">
     
   
-    Schema for MLIP configuration
+    Schema for MLIP settings
   
 
     
@@ -1184,7 +1214,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Schema for MLIP configuration
+    Schema for MLIP settings
   
 
           </label>
@@ -1317,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clff_cli.md" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
@@ -1783,19 +1813,16 @@
                 
                   
 
-<h1 id="clff-pes-calculation">CLFF: PES calculation<a class="headerlink" href="#clff-pes-calculation" title="Permanent link">¤</a></h1>
-<p><code>clff_pes</code> is a command-line tool designed to perform the calculation of Potential Energy Surfaces (PES). The following tasks are run automatically without the need for any user intervention:</p>
-<ul>
-<li>Build atomic structures</li>
-<li>Generate DFT/MD codes to optimize atomic structures</li>
-<li>Submit the optimization jobs to the clusters, monitor the job status, and get back the DFT calcualation results</li>
-</ul>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clff_pes<span class="w"> </span>PARAM.yml<span class="w"> </span>MACHINE.yml
+<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¤</a></h1>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>This page is under construction. Please check back later.</p>
+</details>
+<p>Install <code>clff</code> package in your local laptop or desktop computer.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>clff_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>clff_env
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>install<span class="w"> </span>clff<span class="w"> </span>clff<span class="o">[</span>phonon<span class="o">]</span>
 </span></code></pre></div>
-<ul>
-<li><code>PARAM.yml</code>: The parameters of the generator.</li>
-<li><code>MACHINE.yml</code>: The settings of the machines running the generator's subprocesses.</li>
-</ul>
 
 
 
@@ -1849,7 +1876,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../clff_elastic_calc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Elastic stiffness tensor">
+          <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1859,20 +1886,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Elastic stiffness tensor
+                Quickstart
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../schema/index_manual_schema/" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
+          <a href="../wl_concurrent_learning/" class="md-footer__link md-footer__link--next" aria-label="Next: Concurrent learning MLIPs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Index
+                Concurrent learning MLIPs
               </div>
             </div>
             <div class="md-footer__button md-icon">
