@@ -82,11 +82,11 @@ def main():
     )
     append_example_config(
         md_file="./_docs/schema/manual_SCHEMA_CONCURRENTing.md",
-        config_files=[f"{EXAMPLE_PATH}/al/sampleConfig_active_learn.yml"],
+        config_files=[f"{EXAMPLE_PATH}/cl/sampleConfig_concurrent_learn.yml"],
     )
     append_example_config(
         md_file="./_docs/schema/manual_schema_finetune.md",
-        config_files=[f"{EXAMPLE_PATH}/al/sampleConfig_finetune.yml"],
+        config_files=[f"{EXAMPLE_PATH}/cl/sampleConfig_finetune.yml"],
     )
 
     append_example_config(
