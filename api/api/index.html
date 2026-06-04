@@ -1631,10 +1631,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clff.cl.active_learning" class="md-nav__link">
+  <a href="#clff.cl.concurrent_learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;active_learning
+        <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;concurrent_learning
       
     </span>
   </a>
@@ -2632,10 +2632,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clff.cl.active_learning" class="md-nav__link">
+  <a href="#clff.cl.concurrent_learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;active_learning
+        <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;concurrent_learning
       
     </span>
   </a>
@@ -3192,7 +3192,7 @@
           <b><code><a class="autorefs autorefs-internal" title="            cl (clff.cl)" href="#clff.cl">cl</a></code></b>
           –
           <div class="doc-md-description">
-            <p>Active Learning package.</p>
+            <p>Concurrent Learning package.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -3512,7 +3512,7 @@
 <div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="nx">__init__</span><span class="p">()</span><span class="err">`</span><span class="p">:</span><span class="w"> </span><span class="nx">initialize</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">workflow</span><span class="p">,</span><span class="w"> </span><span class="nx">need</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="nx">these</span><span class="w"> </span><span class="nx">attributes</span><span class="p">:</span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="kp">self</span><span class="p">.</span><span class="nx">stage_map</span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="kp">self</span><span class="p">.</span><span class="nx">wf_name</span>
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="nx">run</span><span class="p">()</span><span class="err">`</span><span class="p">:</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="nx">function</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">workflow</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">implementation</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">loop</span><span class="w"> </span><span class="nx">over</span><span class="w"> </span><span class="nx">stages</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="err">`</span><span class="kp">self</span><span class="p">.</span><span class="nx">stage_map</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="nx">just</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">workflow</span><span class="p">.</span><span class="w"> </span><span class="nx">For</span><span class="w"> </span><span class="nx">complex</span><span class="w"> </span><span class="nx">workflow</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">iteration</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="nx">learning</span><span class="p">),</span><span class="w"> </span><span class="nx">need</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">reimplement</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="nx">run</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="nx">function</span><span class="p">.</span>
+<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="nx">run</span><span class="p">()</span><span class="err">`</span><span class="p">:</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="nx">function</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">workflow</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">implementation</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">loop</span><span class="w"> </span><span class="nx">over</span><span class="w"> </span><span class="nx">stages</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="err">`</span><span class="kp">self</span><span class="p">.</span><span class="nx">stage_map</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="nx">just</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">workflow</span><span class="p">.</span><span class="w"> </span><span class="nx">For</span><span class="w"> </span><span class="nx">complex</span><span class="w"> </span><span class="nx">workflow</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">iteration</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="nx">Concurrent</span><span class="w"> </span><span class="nx">Learning</span><span class="p">),</span><span class="w"> </span><span class="nx">need</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">reimplement</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="nx">run</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="nx">function</span><span class="p">.</span>
 </code></pre></div>
 
 
@@ -3566,11 +3566,11 @@
             <ul class="doc doc-backlink-list">
       <li class="doc doc-backlink">
             <span class="doc doc-backlink-crumb">
-      <a href="../api_al/#clff.cl.active_learning"><code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;active_learning</a>
+      <a href="../api_al/#clff.cl.concurrent_learning"><code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;concurrent_learning</a>
   </span>
 
             <span class="doc doc-backlink-crumb last">
-      <a href="../api_al/#clff.cl.active_learning.WorkflowActiveLearning"><code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WorkflowActiveLearning</a>
+      <a href="../api_al/#clff.cl.concurrent_learning.WorkflowConcurrentLearning"><code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WorkflowConcurrentLearning</a>
   </span>
 
       </li>
@@ -3961,7 +3961,7 @@
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 
@@ -6453,7 +6453,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
     <div class="doc doc-contents ">
 
-        <p>Active Learning package.</p>
+        <p>Concurrent Learning package.</p>
 
           
 
@@ -6464,10 +6464,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <p><span class="doc-section-title">Modules:</span></p>
     <ul>
         <li class="doc-section-item field-body">
-          <b><code><a class="autorefs autorefs-internal" title="            active_learning (clff.cl.active_learning)" href="#clff.cl.active_learning">active_learning</a></code></b>
+          <b><code><a class="autorefs autorefs-internal" title="            concurrent_learning (clff.cl.concurrent_learning)" href="#clff.cl.concurrent_learning">concurrent_learning</a></code></b>
           –
           <div class="doc-md-description">
-            <p>Active Learning module.</p>
+            <p>Concurrent Learning module.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -6502,7 +6502,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
           <b><code><a class="autorefs autorefs-internal" title="            utilcl (clff.cl.utilcl)" href="#clff.cl.utilcl">utilcl</a></code></b>
           –
           <div class="doc-md-description">
-            <p>Utilities for Active Learning workflow.</p>
+            <p>Utilities for Concurrent Learning workflow.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -6540,15 +6540,15 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h4 id="clff.cl.active_learning" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>active_learning</code>
+<h4 id="clff.cl.concurrent_learning" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>concurrent_learning</code>
 
 
-<a href="#clff.cl.active_learning" class="headerlink" title="Permanent link">¤</a></h4>
+<a href="#clff.cl.concurrent_learning" class="headerlink" title="Permanent link">¤</a></h4>
 
     <div class="doc doc-contents ">
 
-        <p>Active Learning module.</p>
+        <p>Concurrent Learning module.</p>
 
           
 
@@ -6563,10 +6563,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <p><span class="doc-section-title">Classes:</span></p>
     <ul>
         <li class="doc-section-item field-body">
-          <b><code><a class="autorefs autorefs-internal" title="              WorkflowActiveLearning(params_file: str, machines_file: str) (clff.cl.active_learning.WorkflowActiveLearning)" href="#clff.cl.active_learning.WorkflowActiveLearning">WorkflowActiveLearning</a></code></b>
+          <b><code><a class="autorefs autorefs-internal" title="              WorkflowConcurrentLearning(params_file: str, machines_file: str) (clff.cl.concurrent_learning.WorkflowConcurrentLearning)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning">WorkflowConcurrentLearning</a></code></b>
           –
           <div class="doc-md-description">
-            <p>Workflow for active learning.</p>
+            <p>Workflow for Concurrent Learning.</p>
           </div>
         </li>
     </ul>
@@ -6577,21 +6577,21 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <p><span class="doc-section-title">Functions:</span></p>
     <ul>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            stage_train(iter_idx, pdict, mdict) (clff.cl.active_learning.stage_train)" href="#clff.cl.active_learning.stage_train">stage_train</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            stage_train(iter_idx, pdict, mdict) (clff.cl.concurrent_learning.stage_train)" href="#clff.cl.concurrent_learning.stage_train">stage_train</a></code></b>
             –
             <div class="doc-md-description">
               <p>Stage function for ML training tasks.</p>
             </div>
           </li>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            stage_md(iter_idx, pdict, mdict) (clff.cl.active_learning.stage_md)" href="#clff.cl.active_learning.stage_md">stage_md</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            stage_md(iter_idx, pdict, mdict) (clff.cl.concurrent_learning.stage_md)" href="#clff.cl.concurrent_learning.stage_md">stage_md</a></code></b>
             –
             <div class="doc-md-description">
               <p>Stage function for MD exploration tasks.</p>
             </div>
           </li>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            stage_dft(iter_idx, pdict, mdict) (clff.cl.active_learning.stage_dft)" href="#clff.cl.active_learning.stage_dft">stage_dft</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            stage_dft(iter_idx, pdict, mdict) (clff.cl.concurrent_learning.stage_dft)" href="#clff.cl.concurrent_learning.stage_dft">stage_dft</a></code></b>
             –
             <div class="doc-md-description">
               <p>Stage function for DFT labeling tasks.</p>
@@ -6617,10 +6617,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h5 id="clff.cl.active_learning.WorkflowActiveLearning" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>              <code class="highlight language-python"><span class="n">WorkflowActiveLearning</span><span class="p">(</span><span class="n">params_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">machines_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
+<h5 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>              <code class="highlight language-python"><span class="n">WorkflowConcurrentLearning</span><span class="p">(</span><span class="n">params_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">machines_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning" class="headerlink" title="Permanent link">¤</a></h5>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning" class="headerlink" title="Permanent link">¤</a></h5>
 
 
     <div class="doc doc-contents ">
@@ -6629,12 +6629,12 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-        <p>Workflow for active learning.</p>
+        <p>Workflow for Concurrent Learning.</p>
 
 
 <details class="notes" open>
   <summary>Notes</summary>
-  <p>Need to redefine <code>.run()</code> method, since the Active Learning workflow is different from the base class.</p>
+  <p>Need to redefine <code>.run()</code> method, since the Concurrent Learning workflow is different from the base class.</p>
 </details>
           
 
@@ -6651,7 +6651,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <p><span class="doc-section-title">Methods:</span></p>
     <ul>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            run() (clff.cl.active_learning.WorkflowActiveLearning.run)" href="#clff.cl.active_learning.WorkflowActiveLearning.run">run</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            run() (clff.cl.concurrent_learning.WorkflowConcurrentLearning.run)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.run">run</a></code></b>
             –
             <div class="doc-md-description">
               
@@ -6669,18 +6669,18 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.stage_map)" href="#clff.cl.active_learning.WorkflowActiveLearning.stage_map">stage_map</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_map)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_map">stage_map</a></code></b>
           –
           <div class="doc-md-description">
             
           </div>
         </li>
         <li class="doc-section-item field-body">
-          <b><code><a class="autorefs autorefs-internal" title="            wf_name = 'ACTIVE LEARNING'
+          <b><code><a class="autorefs autorefs-internal" title="            wf_name = 'Concurrent Learning'
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.wf_name)" href="#clff.cl.active_learning.WorkflowActiveLearning.wf_name">wf_name</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.wf_name)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.wf_name">wf_name</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6691,7 +6691,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.params_file)" href="#clff.cl.active_learning.WorkflowActiveLearning.params_file">params_file</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.params_file)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.params_file">params_file</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6702,7 +6702,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.machines_file)" href="#clff.cl.active_learning.WorkflowActiveLearning.machines_file">machines_file</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.machines_file)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.machines_file">machines_file</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6713,7 +6713,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.schema_file)" href="#clff.cl.active_learning.WorkflowActiveLearning.schema_file">schema_file</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.schema_file)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.schema_file">schema_file</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6724,7 +6724,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.multi_mdicts)" href="#clff.cl.active_learning.WorkflowActiveLearning.multi_mdicts">multi_mdicts</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.multi_mdicts)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.multi_mdicts">multi_mdicts</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6735,7 +6735,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.pdict)" href="#clff.cl.active_learning.WorkflowActiveLearning.pdict">pdict</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.pdict)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.pdict">pdict</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6746,7 +6746,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
   
       instance-attribute
-   (clff.cl.active_learning.WorkflowActiveLearning.stage_list)" href="#clff.cl.active_learning.WorkflowActiveLearning.stage_list">stage_list</a></code></b>
+   (clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_list)" href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_list">stage_list</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -6769,14 +6769,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.stage_map" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_map" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">stage_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ml_train&#39;</span><span class="p">:</span> <span class="n">stage_train</span><span class="p">,</span> <span class="s1">&#39;md_explore&#39;</span><span class="p">:</span> <span class="n">stage_md</span><span class="p">,</span> <span class="s1">&#39;dft_label&#39;</span><span class="p">:</span> <span class="n">stage_dft</span><span class="p">}</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.stage_map" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_map" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6790,14 +6790,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.wf_name" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">wf_name</span> <span class="o">=</span> <span class="s1">&#39;ACTIVE LEARNING&#39;</span></code>
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.wf_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">wf_name</span> <span class="o">=</span> <span class="s1">&#39;Concurrent Learning&#39;</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.wf_name" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.wf_name" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6811,14 +6811,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.params_file" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.params_file" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">params_file</span> <span class="o">=</span> <span class="n">params_file</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.params_file" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.params_file" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6832,14 +6832,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.machines_file" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.machines_file" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">machines_file</span> <span class="o">=</span> <span class="n">machines_file</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.machines_file" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.machines_file" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6853,14 +6853,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.schema_file" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.schema_file" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">schema_file</span> <span class="o">=</span> <span class="n">schema_file</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.schema_file" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.schema_file" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6874,14 +6874,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.multi_mdicts" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.multi_mdicts" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">multi_mdicts</span> <span class="o">=</span> <span class="n">config_machine</span><span class="o">.</span><span class="n">multi_mdicts</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.multi_mdicts" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.multi_mdicts" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6895,14 +6895,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.pdict" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.pdict" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">pdict</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">loadconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params_file</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.pdict" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.pdict" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6916,14 +6916,14 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.stage_list" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_list" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">stage_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_stage_list</span><span class="p">()</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.stage_list" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.stage_list" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6939,10 +6939,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <div class="doc doc-object doc-function">
 
 
-<h6 id="clff.cl.active_learning.WorkflowActiveLearning.run" class="doc doc-heading">
+<h6 id="clff.cl.concurrent_learning.WorkflowConcurrentLearning.run" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
 
-<a href="#clff.cl.active_learning.WorkflowActiveLearning.run" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.concurrent_learning.WorkflowConcurrentLearning.run" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -6965,10 +6965,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <div class="doc doc-object doc-function">
 
 
-<h5 id="clff.cl.active_learning.stage_train" class="doc doc-heading">
+<h5 id="clff.cl.concurrent_learning.stage_train" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">stage_train</span><span class="p">(</span><span class="n">iter_idx</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">mdict</span><span class="p">)</span></code>
 
-<a href="#clff.cl.active_learning.stage_train" class="headerlink" title="Permanent link">¤</a></h5>
+<a href="#clff.cl.concurrent_learning.stage_train" class="headerlink" title="Permanent link">¤</a></h5>
 
 
     <div class="doc doc-contents ">
@@ -6987,10 +6987,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <div class="doc doc-object doc-function">
 
 
-<h5 id="clff.cl.active_learning.stage_md" class="doc doc-heading">
+<h5 id="clff.cl.concurrent_learning.stage_md" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">stage_md</span><span class="p">(</span><span class="n">iter_idx</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">mdict</span><span class="p">)</span></code>
 
-<a href="#clff.cl.active_learning.stage_md" class="headerlink" title="Permanent link">¤</a></h5>
+<a href="#clff.cl.concurrent_learning.stage_md" class="headerlink" title="Permanent link">¤</a></h5>
 
 
     <div class="doc doc-contents ">
@@ -7011,10 +7011,10 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 <div class="doc doc-object doc-function">
 
 
-<h5 id="clff.cl.active_learning.stage_dft" class="doc doc-heading">
+<h5 id="clff.cl.concurrent_learning.stage_dft" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">stage_dft</span><span class="p">(</span><span class="n">iter_idx</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">mdict</span><span class="p">)</span></code>
 
-<a href="#clff.cl.active_learning.stage_dft" class="headerlink" title="Permanent link">¤</a></h5>
+<a href="#clff.cl.concurrent_learning.stage_dft" class="headerlink" title="Permanent link">¤</a></h5>
 
 
     <div class="doc doc-contents ">
@@ -7430,7 +7430,7 @@ Needs to override <code>self.stage_list</code> in base class, because the stages
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 
@@ -10018,7 +10018,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
 
     <div class="doc doc-contents ">
 
-        <p>Utilities for Active Learning workflow.</p>
+        <p>Utilities for Concurrent Learning workflow.</p>
 
           
 
@@ -11925,7 +11925,7 @@ Parallel mode: will generate files as "outfile/deployed_parallel_0.pt", "outfile
             <b><code><a class="autorefs autorefs-internal" title="            clff_cl() (clff.cli.clff_cl)" href="#clff.cli.clff_cl">clff_cl</a></code></b>
             –
             <div class="doc-md-description">
-              <p>CLI for active learning.</p>
+              <p>CLI for concurrent learning.</p>
             </div>
           </li>
           <li class="doc-section-item field-body">
@@ -12005,7 +12005,7 @@ Parallel mode: will generate files as "outfile/deployed_parallel_0.pt", "outfile
 
     <div class="doc doc-contents ">
 
-        <p>CLI for active learning.</p>
+        <p>CLI for concurrent learning.</p>
 
           
 
@@ -12661,7 +12661,7 @@ Parallel mode: will generate files as "outfile/deployed_parallel_0.pt", "outfile
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 
@@ -15224,7 +15224,7 @@ Return strain in vector form of Voigt notation, component order: u_{xx}, u_{yy},
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 
@@ -21379,7 +21379,7 @@ for more complex workflow (e.g. with iteration like active learning), need to re
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 
@@ -25711,7 +25711,7 @@ is needed update the cell correctly.</li>
     <div class="doc doc-contents ">
 
         <p>The main function to run the workflow. This default implementation works for simple workflow,
-for more complex workflow (e.g. with iteration like active learning), need to reimplement this <code>.run()</code> function.</p>
+for more complex workflow (e.g. with iteration like Concurrent Learning), need to reimplement this <code>.run()</code> function.</p>
 <p>Notes:
 - Force garbage collection before running the workflow to release unreachable objects (may reduce retained memory from previous stages such as <code>prepare()</code>)..</p>
 

@@ -1397,15 +1397,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#active-learning" class="md-nav__link">
+  <a href="#concurrent-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Active Learning
+        Concurrent Learning
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Active Learning">
+    <nav class="md-nav" aria-label="Concurrent Learning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1939,15 +1939,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#active-learning" class="md-nav__link">
+  <a href="#concurrent-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Active Learning
+        Concurrent Learning
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Active Learning">
+    <nav class="md-nav" aria-label="Concurrent Learning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2713,46 +2713,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="false" data-jp-theme-name="JupyterLab Dark">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=053bcb62">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Table of contents</strong><a id="toc0_"></a></p>
-<ul>
-<li><a href="#toc1_">Tips and tricks</a><ul>
-<li><a href="#toc1_1_">General</a><ul>
-<li><a href="#toc1_1_1_">ignore <code>task_dirs</code></a></li>
-</ul>
-</li>
-<li><a href="#toc1_2_">Active Learning</a><ul>
-<li><a href="#toc1_2_1_">Fake MD candidates</a></li>
-<li><a href="#toc1_2_2_">Effective sampling</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- vscode-jupyter-toc-config
-	numbering=false
-	anchor=true
-	flat=false
-	minLevel=1
-	maxLevel=6
-	/vscode-jupyter-toc-config -->
-<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6f1506a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="tips-and-tricks"><a id="toc1_"></a><a href="#toc0_">Tips and tricks</a><a class="anchor-link" href="#tips-and-tricks">¶</a></h1>
+<h1 id="tips-and-tricks">Tips and tricks<a class="anchor-link" href="#tips-and-tricks">¶</a></h1>
 </div>
 </div>
 </div>
@@ -2763,7 +2730,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="general"><a id="toc1_1_"></a><a href="#toc0_">General</a><a class="anchor-link" href="#general">¶</a></h2><h3 id="ignore-task_dirs"><a id="toc1_1_1_"></a><a href="#toc0_">ignore <code>task_dirs</code></a><a class="anchor-link" href="#ignore-task_dirs">¶</a></h3><p>If for some reasons you want to ignore some <code>task_dirs</code> (e.g., they are remaining jobs from previous launch of <code>clff</code> and need to be ignored on a new launch, some tasks are out_of_memory of your computing resources, etc.) from submission to remote machines, you can create (manually) a file named <code>ignore_task_dirs.yml</code> in the <code>work_dir</code> with the following content:</p>
+<h2 id="general">General<a class="anchor-link" href="#general">¶</a></h2><h3 id="ignore-task_dirs">ignore <code>task_dirs</code><a class="anchor-link" href="#ignore-task_dirs">¶</a></h3><p>If for some reasons you want to ignore some <code>task_dirs</code> (e.g., they are remaining jobs from previous launch of <code>clff</code> and need to be ignored on a new launch, some tasks are out_of_memory of your computing resources, etc.) from submission to remote machines, you can create (manually) a file named <code>ignore_task_dirs.yml</code> in the <code>work_dir</code> with the following content:</p>
 <pre><code class="language-yml">yml
 - path/to/ignore/task_dir1
 - path/to/ignore/task_dir2
@@ -2781,9 +2748,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="active-learning"><a id="toc1_2_"></a><a href="#toc0_">Active Learning</a><a class="anchor-link" href="#active-learning">¶</a></h2><h3 id="fake-md-candidates"><a id="toc1_2_1_"></a><a href="#toc0_">Fake MD candidates</a><a class="anchor-link" href="#fake-md-candidates">¶</a></h3><p>DFT stage collects configurations in dir <code>01_md/md_candidate/*.extxyz</code>. These are the candidates selected by the active learning algorithm.</p>
+<h2 id="concurrent-learning">Concurrent Learning<a class="anchor-link" href="#concurrent-learning">¶</a></h2><h3 id="fake-md-candidates">Fake MD candidates<a class="anchor-link" href="#fake-md-candidates">¶</a></h3><p>DFT stage collects configurations in dir <code>01_md/md_candidate/*.extxyz</code>. These are the candidates selected by the concurrent learning algorithm.</p>
 <ol>
-<li>You can totally "fake" these candidates by: adding some configurations, removing some configurations, or even replacing all candidates with your own configurations,... just by place your <code>.extxyz</code> files in the dir <code>01_md/md_candidate/</code>. The active learning algorithm will just read the configurations in this <code>dir</code> and use them for the next DFT labeling stage. This is useful when you want have more custom configurations to be labeled by DFT.</li>
+<li>You can totally "fake" these candidates by: adding some configurations, removing some configurations, or even replacing all candidates with your own configurations,... just by place your <code>.extxyz</code> files in the dir <code>01_md/md_candidate/</code>. The concurrent learning algorithm will just read the configurations in this <code>dir</code> and use them for the next DFT labeling stage. This is useful when you want have more custom configurations to be labeled by DFT.</li>
 </ol>
 <blockquote>
 <p>Note: avoid adding duplicated custom configurations, do as follow:</p>
@@ -2811,7 +2778,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="effective-sampling"><a id="toc1_2_2_"></a><a href="#toc0_">Effective sampling</a><a class="anchor-link" href="#effective-sampling">¶</a></h3><p>Rules of thumb:</p>
+<h3 id="effective-sampling">Effective sampling<a class="anchor-link" href="#effective-sampling">¶</a></h3><p>Rules of thumb:</p>
 <ul>
 <li>Explicitly index <code>init_struct_paths</code> for each structure for easier control sampling (can get them from <code>01_md/init_paths.yml</code>), i.e., avoid using wildcards like <code>init_structs/*</code>.</li>
 <li>Exclude enough sampled structures from the sampling space to save computational resources (MD run).</li>
