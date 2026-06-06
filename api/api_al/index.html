@@ -28,7 +28,7 @@
           <link rel="icon" href="../../_assets/image/logo_clff.svg">
         
       
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.7">
     
     
       
@@ -36,7 +36,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.121eeaa8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8407f1ab.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
@@ -5273,6 +5273,13 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
               <p>Prepare arguments and data for ML training.</p>
             </div>
           </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            build_graphdata_sevenn(files: list[str], outfile: str = 'graph_atoms.pt', outdir: str = '.', num_cores: int = 1, cutoff: float = 5.0, **ase_kwargs) (clff.cl.mlp.mlp_sevenn.build_graphdata_sevenn)" href="../api/#clff.cl.mlp.mlp_sevenn.build_graphdata_sevenn">build_graphdata_sevenn</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Build SevenNet graph dataset from source files.</p>
+            </div>
+          </li>
     </ul>
 
 
@@ -5830,6 +5837,85 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+<h5 id="clff.cl.mlp.mlp_sevenn.build_graphdata_sevenn" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">build_graphdata_sevenn</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;graph_atoms.pt&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">num_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span> <span class="o">**</span><span class="n">ase_kwargs</span><span class="p">)</span></code>
+
+<a href="#clff.cl.mlp.mlp_sevenn.build_graphdata_sevenn" class="headerlink" title="Permanent link">¤</a></h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Build SevenNet graph dataset from source files.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>files</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+          –
+          <div class="doc-md-description">
+            <p>List of input data files. Supported formats: extxyz, and other formats defined in function <code>SevenNetGraphDataset.file_to_graph_list()</code>.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>outfile</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, default:
+                  <code>&#39;graph_atoms.pt&#39;</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Name of the output file. Defaults to "graph_atoms.pt".</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>outdir</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, default:
+                  <code>&#39;.&#39;</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Output directory. Defaults to ".".</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>num_cores</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>, default:
+                  <code>1</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Number of CPU cores for parallel processing. Defaults to 1.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>cutoff</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>, default:
+                  <code>5.0</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Cutoff distance for neighbor search. Defaults to 5.0.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**ase_kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional keyword arguments for ASE's <code>read()</code> function</p>
+          </div>
+        </li>
+    </ul>
+
+          
+
+    </div>
+
+</div>
+
 
 
   </div>
@@ -5933,17 +6019,6 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <p><span class="doc-section-title">Methods:</span></p>
     <ul>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            build_graph_sevenn(files: list[str], outfile: str = 'graph_atoms.pt', outdir: str = '.', num_cores: int = 1, cutoff: float = 5.0, **ase_kwargs)
-
-  
-      staticmethod
-   (clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_sevenn)" href="../api/#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_sevenn">build_graph_sevenn</a></code></b>
-            –
-            <div class="doc-md-description">
-              <p>Build SevenNet graph dataset from source files.</p>
-            </div>
-          </li>
-          <li class="doc-section-item field-body">
             <b><code><a class="autorefs autorefs-internal" title="            build_graph_mace()
 
   
@@ -5982,89 +6057,6 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-
-<div class="doc doc-object doc-function">
-
-
-<h6 id="clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_sevenn" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">build_graph_sevenn</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;graph_atoms.pt&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">num_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span> <span class="o">**</span><span class="n">ase_kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-<a href="#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_sevenn" class="headerlink" title="Permanent link">¤</a></h6>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Build SevenNet graph dataset from source files.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <ul>
-        <li class="doc-section-item field-body">
-            <b><code>files</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
-          –
-          <div class="doc-md-description">
-            <p>List of input data files. Supported formats: extxyz, and other formats defined in function <code>SevenNetGraphDataset.file_to_graph_list()</code>.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>outfile</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, default:
-                  <code>&#39;graph_atoms.pt&#39;</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>Name of the output file. Defaults to "graph_atoms.pt".</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>outdir</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, default:
-                  <code>&#39;.&#39;</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>Output directory. Defaults to ".".</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>num_cores</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>, default:
-                  <code>1</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>Number of CPU cores for parallel processing. Defaults to 1.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>cutoff</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>, default:
-                  <code>5.0</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>Cutoff distance for neighbor search. Defaults to 5.0.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>**ase_kwargs</code></b>
-          –
-          <div class="doc-md-description">
-            <p>Additional keyword arguments for ASE's <code>read()</code> function</p>
-          </div>
-        </li>
-    </ul>
-
-          
-
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -8183,7 +8175,7 @@ Parallel mode: will generate files as "outfile/deployed_parallel_0.pt", "outfile
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["content.code.annotate", "content.code.copy", "navigation.expand", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "content.action.edit", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.tabs.header"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ca2bdf3f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.01cdd511.min.js"></script>
       
         <script src="../../1thang_js/page_logVisitor.js"></script>
       
