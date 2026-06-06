@@ -8918,8 +8918,598 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
+<p><span class="doc-section-title">Classes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="              OperTrainGraphpes(work_dir, pdict, multi_mdict, mdict_prefix='train') (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes">OperTrainGraphpes</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+    </ul>
 
 
+
+
+<p><span class="doc-section-title">Functions:</span></p>
+    <ul>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            pretrain_graphpes(work_dir, pdict, mdict) (clff.cl.mlp.mlp_graphpes.pretrain_graphpes)" href="#clff.cl.mlp.mlp_graphpes.pretrain_graphpes">pretrain_graphpes</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Prepare arguments and data for GraphPES training.</p>
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            build_graphdata_graphpes(files: list[str], outfile: str = 'graph_atoms.pt', outdir: str = '.', num_cores: int = 1, cutoff: float | None = None, **ase_kwargs) (clff.cl.mlp.mlp_graphpes.build_graphdata_graphpes)" href="#clff.cl.mlp.mlp_graphpes.build_graphdata_graphpes">build_graphdata_graphpes</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Build GraphPES graph dataset from source files.</p>
+            </div>
+          </li>
+    </ul>
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>              <code class="highlight language-python"><span class="n">OperTrainGraphpes</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">multi_mdict</span><span class="p">,</span> <span class="n">mdict_prefix</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes" class="headerlink" title="Permanent link">¤</a></h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="              RemoteOperation(work_dir, pdict, multi_mdicts, mdict_prefix='') (clff.base.RemoteOperation)" href="#clff.base.RemoteOperation">RemoteOperation</a></code></p>
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <ul>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            prepare() (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.prepare)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.prepare">prepare</a></code></b>
+            –
+            <div class="doc-md-description">
+              
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            postprocess() (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.postprocess)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.postprocess">postprocess</a></code></b>
+            –
+            <div class="doc-md-description">
+              
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            run() (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.run)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.run">run</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Function to submit jobs to remote machines.</p>
+            </div>
+          </li>
+    </ul>
+
+
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            op_name = 'Training'
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.op_name)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.op_name">op_name</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            task_filter = {'has_files': [K.FILE_ARG_TRAIN], 'no_files': ['checkpoint_best.pth']}
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_filter)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_filter">task_filter</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            work_dir = work_dir
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.work_dir)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.work_dir">work_dir</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            pdict = pdict
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.pdict)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.pdict">pdict</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            mdict_list = self._select_machines(multi_mdicts, mdict_prefix)
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.mdict_list)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.mdict_list">mdict_list</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            task_dirs = self._load_task_dirs()
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_dirs)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_dirs">task_dirs</a></code></b>
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            commandlist_list: list[list[str]]
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.commandlist_list)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.commandlist_list">commandlist_list</a></code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]]</code>)
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            forward_files: list[str]
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_files)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_files">forward_files</a></code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            backward_files: list[str]
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_files)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_files">backward_files</a></code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            forward_common_files: list[str]
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_common_files)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_common_files">forward_common_files</a></code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><a class="autorefs autorefs-internal" title="            backward_common_files: list[str] = []
+
+  
+      instance-attribute
+   (clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_common_files)" href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_common_files">backward_common_files</a></code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+          –
+          <div class="doc-md-description">
+            
+          </div>
+        </li>
+    </ul>
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.op_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">op_name</span> <span class="o">=</span> <span class="s1">&#39;Training&#39;</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.op_name" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_filter" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">task_filter</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;has_files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">K</span><span class="o">.</span><span class="n">FILE_ARG_TRAIN</span><span class="p">],</span> <span class="s1">&#39;no_files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;checkpoint_best.pth&#39;</span><span class="p">]}</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_filter" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.work_dir" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">work_dir</span> <span class="o">=</span> <span class="n">work_dir</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.work_dir" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.pdict" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">pdict</span> <span class="o">=</span> <span class="n">pdict</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.pdict" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.mdict_list" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">mdict_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_machines</span><span class="p">(</span><span class="n">multi_mdicts</span><span class="p">,</span> <span class="n">mdict_prefix</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.mdict_list" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_dirs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">task_dirs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_task_dirs</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.task_dirs" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.commandlist_list" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">commandlist_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.commandlist_list" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_files" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">forward_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_files" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_files" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">backward_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_files" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_common_files" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">forward_common_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.forward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_common_files" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">backward_common_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.backward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.prepare" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">prepare</span><span class="p">()</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.prepare" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.postprocess" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">postprocess</span><span class="p">()</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.postprocess" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+          
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h7 id="clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.run" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.OperTrainGraphpes.run" class="headerlink" title="Permanent link">¤</a></h7>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Function to submit jobs to remote machines.</p>
+
+
+<details class="notes" open>
+  <summary>Notes</summary>
+  <ul>
+<li>Orginal <code>taks_dirs</code> is relative to <code>run_dir</code>, and should not be changed. But the sumbmission function needs <code>taks_dirs</code> relative path to <code>work_dir</code>, so we make temporary change here.</li>
+</ul>
+</details>
+          
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="clff.cl.mlp.mlp_graphpes.pretrain_graphpes" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">pretrain_graphpes</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">mdict</span><span class="p">)</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.pretrain_graphpes" class="headerlink" title="Permanent link">¤</a></h6>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Prepare arguments and data for GraphPES training.</p>
+<p>This mirrors <code>pretrain_sevenn</code> but uses <code>graph_pes</code> preprocessing and
+expects <code>graphpes_args</code> inside <code>pdict['train']</code>.</p>
+
+          
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="clff.cl.mlp.mlp_graphpes.build_graphdata_graphpes" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">build_graphdata_graphpes</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;graph_atoms.pt&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">num_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">ase_kwargs</span><span class="p">)</span></code>
+
+<a href="#clff.cl.mlp.mlp_graphpes.build_graphdata_graphpes" class="headerlink" title="Permanent link">¤</a></h6>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Build GraphPES graph dataset from source files.</p>
+<p>This function tries to detect a suitable API in the installed <code>graph_pes</code>
+package and invoke it. If the installed version is incompatible, an
+informative ImportError is raised.</p>
+
+          
+
+    </div>
+
+</div>
+
+
+
+  </div>
 
     </div>
 
@@ -8969,6 +9559,13 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
           </li>
           <li class="doc-section-item field-body">
             <b><code><a class="autorefs autorefs-internal" title="            post_train_mace(iter_idx, pdict, mdict) (clff.cl.mlp.mlp_mace.post_train_mace)" href="#clff.cl.mlp.mlp_mace.post_train_mace">post_train_mace</a></code></b>
+            –
+            <div class="doc-md-description">
+              
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="            build_graphdata_mace() (clff.cl.mlp.mlp_mace.build_graphdata_mace)" href="#clff.cl.mlp.mlp_mace.build_graphdata_mace">build_graphdata_mace</a></code></b>
             –
             <div class="doc-md-description">
               
@@ -9042,6 +9639,23 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+<h6 id="clff.cl.mlp.mlp_mace.build_graphdata_mace" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">build_graphdata_mace</span><span class="p">()</span></code>
+
+<a href="#clff.cl.mlp.mlp_mace.build_graphdata_mace" class="headerlink" title="Permanent link">¤</a></h6>
+
+
+    <div class="doc doc-contents ">
+
+          
+
+    </div>
+
+</div>
+
 
 
   </div>
@@ -9077,7 +9691,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <p><span class="doc-section-title">Classes:</span></p>
     <ul>
         <li class="doc-section-item field-body">
-          <b><code><a class="autorefs autorefs-internal" title="              OperAltrainSevennet(work_dir, pdict, multi_mdict, mdict_prefix='train') (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet">OperAltrainSevennet</a></code></b>
+          <b><code><a class="autorefs autorefs-internal" title="              OperTrainSevenn(work_dir, pdict, multi_mdict, mdict_prefix='train') (clff.cl.mlp.mlp_sevenn.OperTrainSevenn)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn">OperTrainSevenn</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9124,10 +9738,10 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h6 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>              <code class="highlight language-python"><span class="n">OperAltrainSevennet</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">multi_mdict</span><span class="p">,</span> <span class="n">mdict_prefix</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span></code>
+<h6 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>              <code class="highlight language-python"><span class="n">OperTrainSevenn</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">pdict</span><span class="p">,</span> <span class="n">multi_mdict</span><span class="p">,</span> <span class="n">mdict_prefix</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span></code>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet" class="headerlink" title="Permanent link">¤</a></h6>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn" class="headerlink" title="Permanent link">¤</a></h6>
 
 
     <div class="doc doc-contents ">
@@ -9151,21 +9765,21 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <p><span class="doc-section-title">Methods:</span></p>
     <ul>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            prepare() (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.prepare)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.prepare">prepare</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            prepare() (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.prepare)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.prepare">prepare</a></code></b>
             –
             <div class="doc-md-description">
               <p>Prepare for remote training operation.</p>
             </div>
           </li>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            postprocess() (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.postprocess)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.postprocess">postprocess</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            postprocess() (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.postprocess)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.postprocess">postprocess</a></code></b>
             –
             <div class="doc-md-description">
               <p>Collect the best checkpoint files and save them in FILE_CHECKPOINTS.</p>
             </div>
           </li>
           <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            run() (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.run)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.run">run</a></code></b>
+            <b><code><a class="autorefs autorefs-internal" title="            run() (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.run)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.run">run</a></code></b>
             –
             <div class="doc-md-description">
               <p>Function to submit jobs to remote machines.</p>
@@ -9183,7 +9797,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.op_name)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.op_name">op_name</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.op_name)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.op_name">op_name</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9194,7 +9808,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_filter)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_filter">task_filter</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_filter)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_filter">task_filter</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9205,7 +9819,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.work_dir)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.work_dir">work_dir</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.work_dir)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.work_dir">work_dir</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9216,7 +9830,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.pdict)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.pdict">pdict</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.pdict)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.pdict">pdict</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9227,7 +9841,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.mdict_list)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.mdict_list">mdict_list</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.mdict_list)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.mdict_list">mdict_list</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9238,7 +9852,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_dirs)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_dirs">task_dirs</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_dirs)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_dirs">task_dirs</a></code></b>
           –
           <div class="doc-md-description">
             
@@ -9249,7 +9863,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.commandlist_list)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.commandlist_list">commandlist_list</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.commandlist_list)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.commandlist_list">commandlist_list</a></code></b>
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]]</code>)
           –
           <div class="doc-md-description">
@@ -9261,7 +9875,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_files)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_files">forward_files</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_files)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_files">forward_files</a></code></b>
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
           –
           <div class="doc-md-description">
@@ -9273,7 +9887,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_files)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_files">backward_files</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_files)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_files">backward_files</a></code></b>
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
           –
           <div class="doc-md-description">
@@ -9285,7 +9899,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_common_files)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_common_files">forward_common_files</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_common_files)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_common_files">forward_common_files</a></code></b>
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
           –
           <div class="doc-md-description">
@@ -9297,7 +9911,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
   
       instance-attribute
-   (clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_common_files)" href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_common_files">backward_common_files</a></code></b>
+   (clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_common_files)" href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_common_files">backward_common_files</a></code></b>
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
           –
           <div class="doc-md-description">
@@ -9321,14 +9935,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.op_name" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.op_name" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">op_name</span> <span class="o">=</span> <span class="s1">&#39;Training&#39;</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.op_name" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.op_name" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9342,14 +9956,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_filter" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_filter" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">task_filter</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;has_files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">K</span><span class="o">.</span><span class="n">FILE_ARG_TRAIN</span><span class="p">],</span> <span class="s1">&#39;no_files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;checkpoint_best.pth&#39;</span><span class="p">]}</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_filter" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_filter" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9363,14 +9977,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.work_dir" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.work_dir" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">work_dir</span> <span class="o">=</span> <span class="n">work_dir</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.work_dir" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.work_dir" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9384,14 +9998,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.pdict" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.pdict" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">pdict</span> <span class="o">=</span> <span class="n">pdict</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.pdict" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.pdict" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9405,14 +10019,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.mdict_list" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.mdict_list" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">mdict_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_machines</span><span class="p">(</span><span class="n">multi_mdicts</span><span class="p">,</span> <span class="n">mdict_prefix</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.mdict_list" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.mdict_list" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9426,14 +10040,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_dirs" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_dirs" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">task_dirs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_task_dirs</span><span class="p">()</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.task_dirs" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.task_dirs" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9447,14 +10061,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.commandlist_list" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.commandlist_list" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">commandlist_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.commandlist_list" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.commandlist_list" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9468,14 +10082,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_files" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_files" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">forward_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_files" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_files" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9489,14 +10103,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_files" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_files" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">backward_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_files" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_files" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9510,14 +10124,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_common_files" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_common_files" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">forward_common_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.forward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.forward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9531,14 +10145,14 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_common_files" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_common_files" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">backward_common_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.backward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.backward_common_files" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9554,10 +10168,10 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <div class="doc doc-object doc-function">
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.prepare" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.prepare" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">prepare</span><span class="p">()</span></code>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.prepare" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.prepare" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9577,10 +10191,10 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <div class="doc doc-object doc-function">
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.postprocess" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.postprocess" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">postprocess</span><span class="p">()</span></code>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.postprocess" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.postprocess" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9596,10 +10210,10 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 <div class="doc doc-object doc-function">
 
 
-<h7 id="clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.run" class="doc doc-heading">
+<h7 id="clff.cl.mlp.mlp_sevenn.OperTrainSevenn.run" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
 
-<a href="#clff.cl.mlp.mlp_sevenn.OperAltrainSevennet.run" class="headerlink" title="Permanent link">¤</a></h7>
+<a href="#clff.cl.mlp.mlp_sevenn.OperTrainSevenn.run" class="headerlink" title="Permanent link">¤</a></h7>
 
 
     <div class="doc doc-contents ">
@@ -9840,93 +10454,7 @@ for more complex workflow (e.g. with iteration like Concurrent Learning), need t
 
 
 
-<p><span class="doc-section-title">Methods:</span></p>
-    <ul>
-          <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            build_graph_mace()
 
-  
-      staticmethod
-   (clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_mace)" href="#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_mace">build_graph_mace</a></code></b>
-            –
-            <div class="doc-md-description">
-              
-            </div>
-          </li>
-          <li class="doc-section-item field-body">
-            <b><code><a class="autorefs autorefs-internal" title="            build_graph_graphpes()
-
-  
-      staticmethod
-   (clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_graphpes)" href="#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_graphpes">build_graph_graphpes</a></code></b>
-            –
-            <div class="doc-md-description">
-              
-            </div>
-          </li>
-    </ul>
-
-
-
-
-
-
-<div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h7 id="clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_mace" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">build_graph_mace</span><span class="p">()</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-<a href="#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_mace" class="headerlink" title="Permanent link">¤</a></h7>
-
-
-    <div class="doc doc-contents ">
-
-          
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h7 id="clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_graphpes" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">build_graph_graphpes</span><span class="p">()</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-<a href="#clff.cl.mlp.util_mlp.Xyz2GraphData.build_graph_graphpes" class="headerlink" title="Permanent link">¤</a></h7>
-
-
-    <div class="doc doc-contents ">
-
-          
-
-    </div>
-
-</div>
-
-
-
-  </div>
 
     </div>
 
